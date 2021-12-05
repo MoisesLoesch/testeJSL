@@ -1,0 +1,162 @@
+﻿@model testeJSL.ViewModels.RegistroViewModel
+@{
+    Layout = null;
+    ViewData["Tittle"] = "Cadastro de motorista";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Novo motorista</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="~/css/site.min.css" rel="stylesheet" />
+    </environment>
+
+</head>
+<body class="corpo">
+
+
+    <div class="registroform">
+        <div class="center-align">
+            <h4><i class="large material-icons">account_circle</i></h4>
+                <h5>Novo motorista</h5>
+        </div>
+        <div>
+            <form asp-action="Registro">
+                <div class="campos">
+                    <div class="red-text text-darken-4" asp-validation-summary="ModelOnly"></div>
+
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="primeiroNome" class="validade" id="primeiroNome" />
+                            <label asp-for="primeiroNome" id="primeiroNome"></label>
+                            <span asp-validation-for="primeiroNome" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="segundoNome" class="validade" id="segundoNome" />
+                            <label asp-for="segundoNome" id="segundoNome"></label>
+                            <span asp-validation-for="segundoNome" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="marca" class="validade" id="marca" />
+                            <label asp-for="marca" id="marca"></label>
+                            <span asp-validation-for="marca" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="modelo" class="validade" id="modelo" />
+                            <label asp-for="modelo" id="modelo"></label>
+                            <span asp-validation-for="modelo" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="placa" class="validade" id="placa" />
+                            <label asp-for="placa" id="placa"></label>
+                            <span asp-validation-for="placa" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="eixos" class="validade" id="eixos" />
+                            <label asp-for="eixos" id="eixos"></label>
+                            <span asp-validation-for="eixos" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="nomeEndereco" class="validade" id="nomeEndereco" />
+                            <label asp-for="nomeEndereco" id="nomeEndereco"></label>
+                            <span asp-validation-for="nomeEndereco" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="bairro" class="validade" id="bairro" />
+                            <label asp-for="bairro" id="bairro"></label>
+                            <span asp-validation-for="bairro" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="cidade" class="validade" id="cidade" />
+                            <label asp-for="cidade" id="primeiroNome"></label>
+                            <span asp-validation-for="cidade" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="cep" class="validade" id="cep" />
+                            <label asp-for="cep" id="cep"></label>
+                            <span asp-validation-for="cep" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="numero" class="validade" id="numero" />
+                            <label asp-for="numero" id="numero"></label>
+                            <span asp-validation-for="numero" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col-12">
+                            <input asp-for="complemento" class="validade" id="complemento" />
+                            <label asp-for="complemento" id="complemento"></label>
+                            <span asp-validation-for="complemento" class="text-darken-4"></span>
+                        </div>
+                    </div>
+
+
+
+                     
+                </div>
+                <div class="botoes">
+                    <button type="submit" class="waves-effect waves-light btn-small green darken-4">Registrar</button> &emsp;
+                    <a asp-controller="Motoristas" asp-action="Register" method="post"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <environment include="Development">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    </environment>
+
+    <environment exclude="Development">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </environment>
+</body>
+</html>
